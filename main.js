@@ -6,7 +6,7 @@ alert(" --- BIENVENIDO A TU TIENDA DE ROPA ---")
 
 function hacerCompra(){ /* tiene que retornar el total de la compra*/
     let producto = prompt("Elige el producto a comprar: Poleron || Polera || Pantalon")
-    while ((producto !== "Poleron") && (producto !== "Polera") && (producto!=="Pantalon")){
+    while ((producto.toLowerCase() !== "poleron") && (producto.toLowerCase() !== "polera") && (producto.toLocaleLowerCase() !=="pantalon")){
         producto = prompt("Incorrecto \nElige el producto a comprar: Poleron || Polera || Pantalon")
     }
 
@@ -14,18 +14,18 @@ function hacerCompra(){ /* tiene que retornar el total de la compra*/
     while (!(Number.isInteger(unidades) && unidades >= 1)){
         unidades = parseInt(prompt("Incorrecto \nIngrese nuevamente la cantidad: "))
     }    
-    switch(producto){
-            case "Poleron":
+    switch(producto.toLowerCase()){
+            case "poleron":
             precio=50
             mostrarImporte(producto, unidades, precio)
             return unidades*precio
             break
-        case "Polera":
+        case "polera":
             precio=25
             mostrarImporte(producto, unidades, precio)
             return unidades*precio
             break
-        case "Pantalon":
+        case "pantalon":
             precio=40
             mostrarImporte(producto, unidades, precio)
             return unidades*precio
